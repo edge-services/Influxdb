@@ -3,7 +3,7 @@
     "label": "$SERVICE_NAME for $ARCH",
     "description": "Edge InfluxDB Service",
     "public": true,
-    "documentation": "Timeseries database service",
+    "documentation": "",
     "url": "$SERVICE_NAME",
     "version": "$SERVICE_VERSION",
     "arch": "$ARCH",

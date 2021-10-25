@@ -1,4 +1,4 @@
 data/
 config/
 *.cfg
-# *.DS_STORE
+*.DS_STORE

@@ -24,49 +24,33 @@
       "serviceVersionRange": "[1.0.0,INFINITY)",
       "inputs": [
         {
-          "name": "INFLUXDB_URL",
-          "value": "http://localhost:8086"
+            "name": "DOCKER_INFLUXDB_INIT_MODE",
+            "value": "setup"
         },
         {
-          "name": "INFLUXDB_TOKEN",
-          "value": "SatnamWaheguruJi1"
+            "name": "DOCKER_INFLUXDB_INIT_USERNAME",
+            "value": "sinny777"
         },
         {
-          "name": "INFLUXDB_ORG",
-          "value": "IBM"
+            "name": "DOCKER_INFLUXDB_INIT_PASSWORD",
+            "value": "1SatnamW"
         },
         {
-          "name": "INFLUXDB_BUCKET",
-          "value": "smartthings"
+            "name": "DOCKER_INFLUXDB_INIT_ORG",
+            "value": "IBM"
         },
         {
-          "name": "SIMULATE",
-          "value": false
+            "name": "DOCKER_INFLUXDB_INIT_BUCKET",
+            "value": "smartthings"
         },
         {
-          "name": "FLOW_URL",
-          "value": "http://localhost:1880/event"
+            "name": "DOCKER_INFLUXDB_INIT_RETENTION",
+            "value": "30d"
         },
         {
-          "name": "AUTH_API_URL",
-          "value": "https://smartthings-auth.mybluemix.net/api"
-        },
-        {
-            "name": "IOT_API_URL",
-            "value": "https://smartthings-iot.mybluemix.net/api"
-        },
-        {
-            "name": "TENANT_ID",
-            "value": "ibm"
-        },
-        {
-            "name": "CLIENT_ID",
-            "value": "EdgeApplication"
-        },
-        {
-            "name": "CLIENT_SECRET",
-            "value": "41b5c0b8-7482-4c46-b323-8458f1cf3ed0"
-        }
+            "name": "DOCKER_INFLUXDB_INIT_ADMIN_TOKEN",
+            "value": "SatnamWaheguruJi1"
+        } 
       ]
     }
   ]
