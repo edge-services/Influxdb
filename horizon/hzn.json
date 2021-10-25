@@ -1,0 +1,8 @@
+{
+    "HZN_ORG_ID": "iac-example-ieam-cluster",
+    "MetadataVars": {
+        "DOCKER_IMAGE_BASE": "influxdb:2.0",
+        "SERVICE_NAME": "edge-influx",
+        "SERVICE_VERSION": "1.0.0"
+    }
+}

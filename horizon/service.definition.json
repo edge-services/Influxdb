@@ -1,0 +1,69 @@
+{
+    "org": "$HZN_ORG_ID",
+    "label": "$SERVICE_NAME for $ARCH",
+    "description": "Edge InfluxDB Service",
+    "public": true,
+    "documentation": "Timeseries database service",
+    "url": "$SERVICE_NAME",
+    "version": "$SERVICE_VERSION",
+    "arch": "$ARCH",
+    "sharable": "multiple",
+    "requiredServices": [],
+    "userInput": [
+        {
+            "name": "DOCKER_INFLUXDB_INIT_MODE",
+            "label": "DOCKER_INFLUXDB_INIT_MODE",
+            "type": "string",
+            "defaultValue": "setup"
+        },
+        {
+            "name": "DOCKER_INFLUXDB_INIT_USERNAME",
+            "label": "DOCKER_INFLUXDB_INIT_USERNAME",
+            "type": "string",
+            "defaultValue": "sinny777"
+        },
+        {
+            "name": "DOCKER_INFLUXDB_INIT_PASSWORD",
+            "label": "DOCKER_INFLUXDB_INIT_PASSWORD",
+            "type": "string",
+            "defaultValue": "1SatnamW"
+        },
+        {
+            "name": "DOCKER_INFLUXDB_INIT_ORG",
+            "label": "DOCKER_INFLUXDB_INIT_ORG",
+            "type": "string",
+            "defaultValue": "IBM"
+        },
+        {
+            "name": "DOCKER_INFLUXDB_INIT_BUCKET",
+            "label": "DOCKER_INFLUXDB_INIT_BUCKET",
+            "type": "string",
+            "defaultValue": "smartthings"
+        },
+        {
+            "name": "DOCKER_INFLUXDB_INIT_RETENTION",
+            "label": "DOCKER_INFLUXDB_INIT_RETENTION",
+            "type": "string",
+            "defaultValue": "30d"
+        },
+        {
+            "name": "DOCKER_INFLUXDB_INIT_ADMIN_TOKEN",
+            "label": "DOCKER_INFLUXDB_INIT_ADMIN_TOKEN",
+            "type": "string",
+            "defaultValue": "SatnamWaheguruJi1"
+        }
+    ],
+    "deployment": {
+        "services": {
+            "edge-gateway": {
+                "image": "${DOCKER_IMAGE_BASE}_$ARCH:$SERVICE_VERSION",
+                "ports": [ 
+                    { "HostIP": "0.0.0.0" , "HostPort": "8086:8086/tcp"}
+                ],
+                "network": "host",
+                "binds": ["/home/db:/var/lib/influxdb2", "/home/db/config:/etc/influxdb2"],
+                "privileged": true
+            }
+        }
+    }
+}

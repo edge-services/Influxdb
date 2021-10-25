@@ -1,0 +1,73 @@
+{
+  "label": "$SERVICE_NAME Deployment Policy",
+  "description": "Edge Gateway service Horizon Deployment Policy",
+  "service": {
+    "name": "$SERVICE_NAME",
+    "org": "$HZN_ORG_ID",
+    "arch": "*",
+    "serviceVersions": [
+      {
+        "version": "$SERVICE_VERSION",
+        "priority":{}
+      }
+    ]
+  },
+  "properties": [
+  ],
+  "constraints": [
+    "InfluxDB == true"
+  ],
+  "userInput": [
+    {
+      "serviceOrgid": "$HZN_ORG_ID",
+      "serviceUrl": "$SERVICE_NAME",
+      "serviceVersionRange": "[1.0.0,INFINITY)",
+      "inputs": [
+        {
+          "name": "INFLUXDB_URL",
+          "value": "http://localhost:8086"
+        },
+        {
+          "name": "INFLUXDB_TOKEN",
+          "value": "SatnamWaheguruJi1"
+        },
+        {
+          "name": "INFLUXDB_ORG",
+          "value": "IBM"
+        },
+        {
+          "name": "INFLUXDB_BUCKET",
+          "value": "smartthings"
+        },
+        {
+          "name": "SIMULATE",
+          "value": false
+        },
+        {
+          "name": "FLOW_URL",
+          "value": "http://localhost:1880/event"
+        },
+        {
+          "name": "AUTH_API_URL",
+          "value": "https://smartthings-auth.mybluemix.net/api"
+        },
+        {
+            "name": "IOT_API_URL",
+            "value": "https://smartthings-iot.mybluemix.net/api"
+        },
+        {
+            "name": "TENANT_ID",
+            "value": "ibm"
+        },
+        {
+            "name": "CLIENT_ID",
+            "value": "EdgeApplication"
+        },
+        {
+            "name": "CLIENT_SECRET",
+            "value": "41b5c0b8-7482-4c46-b323-8458f1cf3ed0"
+        }
+      ]
+    }
+  ]
+}
