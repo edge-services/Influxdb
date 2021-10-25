@@ -56,7 +56,7 @@
     "deployment": {
         "services": {
             "edge-influx": {
-                "image": "${DOCKER_IMAGE_BASE}_$ARCH:$SERVICE_VERSION",
+                "image": "${DOCKER_IMAGE_BASE}:$SERVICE_VERSION",
                 "ports": [ 
                     { "HostIP": "0.0.0.0" , "HostPort": "8086:8086/tcp"}
                 ],
