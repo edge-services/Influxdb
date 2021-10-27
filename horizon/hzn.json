@@ -3,6 +3,6 @@
     "MetadataVars": {
         "DOCKER_IMAGE_BASE": "influxdb",
         "SERVICE_NAME": "edge-influx",
-        "SERVICE_VERSION": "2.0.9"
+        "SERVICE_VERSION": "1.8.10"
     }
 }

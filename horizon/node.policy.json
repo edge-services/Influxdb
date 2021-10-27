@@ -1,8 +1,8 @@
 {
-    "properties": [
-      { "name": "InfluxDB", "value": true }
-    ],
-    "constraints": [
-    ]
+  "properties": [
+    { "name": "InfluxDB", "value": true },
+    { "name": "openhorizon.allowPrivileged", "value": true}
+  ],
+  "constraints": [
+  ]
 }
-  
