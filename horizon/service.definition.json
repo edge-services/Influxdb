@@ -57,11 +57,17 @@
         "services": {
             "edge-influx": {
                 "image": "${DOCKER_IMAGE_BASE}:$SERVICE_VERSION",
-                "ports": [ 
-                    { "HostIP": "0.0.0.0" , "HostPort": "8086:8086/tcp"}
+                "ports": [
+                    {
+                        "HostIP": "0.0.0.0",
+                        "HostPort": "8086:8086/tcp"
+                    }
                 ],
                 "network": "host",
-                "binds": ["/home/db:/var/lib/influxdb2", "/home/db/config:/etc/influxdb2"],
+                "binds": [
+                    "/db:/var/lib/influxdb2",
+                    "/db/config:/etc/influxdb2"
+                ],
                 "privileged": true
             }
         }

@@ -57,6 +57,34 @@ docker run -p 8086:8086 \
     
 ```
 
+### Create Influx Task to Sync Edge data to Cloud
+
+```
+
+import "influxdata/influxdb/secrets"
+
+option task = {
+    name: "SyncDataToCloud",
+    every: 2m,
+    offset: 10s,
+}
+
+// cloudToken = secrets.get(key: "INFLUX_CLOUD_API_TOKEN")
+cloudToken = "qkrJitzQK29ubqrF6c_OCY6J6imicpyLXqiqAb9B0kTk4k8IYwLiWvfntKZDe3LLaiRYqiPBFMIPaOmqzpmU4w=="
+
+from(bucket: "smartthings")
+    |> range(start: -2m)
+    |> filter(fn: (r) => r._measurement == "entityData")
+    |> aggregateWindow(every: 10s, fn: last)
+    |> to(
+        bucket: "smartthings",
+        host: "https://ap-southeast-2-1.aws.cloud2.influxdata.com",
+        org: "sinny777@gmail.com",
+        token: cloudToken,
+    )
+
+```
+
 ## Refrences
 
 - [Edge Computing](https://github.com/sinny777/edge-computing)
